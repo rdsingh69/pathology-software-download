@@ -16,11 +16,12 @@
             top: 0;
             background-color: #0d47a1;
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .hero {
             height: 100vh;
@@ -29,15 +30,75 @@
             justify-content: center;
             align-items: center;
             animation: fadeIn 2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        .hero-text {
+            color: white;
+            flex: 1;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .cta-button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #ff5252;
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+            animation: float 3s ease-in-out infinite;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
         .feature-cards {
             display: flex;
             justify-content: space-around;
-            margin: 20px;
+            margin: 40px 20px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .card {
             background: white;
@@ -45,30 +106,63 @@
             border-radius: 10px;
             padding: 20px;
             width: 30%;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-width: 250px;
         }
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            color: #0d47a1;
+            margin-top: 0;
         }
         .about {
             background-color: #f0f0f0;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+        }
+        .about h2 {
+            color: #0d47a1;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
         .badge {
             background-color: #2196f3;
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
             margin: 5px;
+            display: inline-block;
+            font-weight: 500;
+        }
+        footer {
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
         @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image {
+                margin-top: 30px;
+            }
+            .hero-image img {
+                max-width: 300px;
+            }
             .feature-cards {
                 flex-direction: column;
                 align-items: center;
             }
             .card {
-                width: 80%;
+                width: 90%;
             }
         }
     </style>
@@ -76,31 +170,54 @@
 </head>
 <body>
     <div class="navbar">
-        <div>Logo</div>
-        <div>Links</div>
+        <div style="font-weight: 600; font-size: 1.3rem;">🔬 PathologyLab</div>
+        <div>
+            <a href="#features" style="color: white; text-decoration: none; margin: 0 15px;">Features</a>
+            <a href="#about" style="color: white; text-decoration: none; margin: 0 15px;">About</a>
+            <a href="#download" style="color: white; text-decoration: none; margin: 0 15px;">Download</a>
+        </div>
     </div>
     <div class="hero">
-        <h1 style="color: white;">Welcome to the Pathology Software</h1>
-    </div>
-    <div class="feature-cards">
-        <div class="card">
-            <h2>Feature 1</h2>
-            <p>Description of feature 1.</p>
-        </div>
-        <div class="card">
-            <h2>Feature 2</h2>
-            <p>Description of feature 2.</p>
-        </div>
-        <div class="card">
-            <h2>Feature 3</h2>
-            <p>Description of feature 3.</p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Advanced Pathology Software</h1>
+                <p>Streamline your pathology lab operations with cutting-edge technology</p>
+                <a href="#download" class="cta-button">Download Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn-icons-png.flaticon.com/512/5902/5902695.png" alt="Microscope">
+            </div>
         </div>
     </div>
-    <div class="about">
-        <h2>About Us</h2>
-        <p>We provide top-notch pathology software solutions.</p>
-        <span class="badge">Award 1</span>
-        <span class="badge">Award 2</span>
+    <div class="feature-cards" id="features">
+        <div class="card">
+            <h2>🔍 Precision Analysis</h2>
+            <p>Advanced tools for accurate pathology analysis and diagnosis.</p>
+        </div>
+        <div class="card">
+            <h2>📊 Data Management</h2>
+            <p>Efficiently organize and manage all your laboratory data.</p>
+        </div>
+        <div class="card">
+            <h2>⚡ Fast Processing</h2>
+            <p>Lightning-fast processing for your pathology samples and results.</p>
+        </div>
     </div>
+    <div class="about" id="about">
+        <h2>About PathologyLab Software</h2>
+        <p>We provide top-notch pathology software solutions designed for modern laboratories. Our software integrates seamlessly with your existing workflow to improve efficiency and accuracy.</p>
+        <div style="margin-top: 20px;">
+            <span class="badge">✓ ISO Certified</span>
+            <span class="badge">✓ HIPAA Compliant</span>
+            <span class="badge">✓ 24/7 Support</span>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 40px 20px;" id="download">
+        <h2 style="color: #0d47a1;">Ready to get started?</h2>
+        <a href="https://api.corelablis.com/updates/download/latest/browser" class="cta-button" style="padding: 15px 40px; font-size: 1.1rem;">Download Latest Version</a>
+    </div>
+    <footer>
+        <p>&copy; 2026 PathologyLab Software. All rights reserved. | <a href="#" style="color: #64b5f6;">Privacy Policy</a> | <a href="#" style="color: #64b5f6;">Terms of Service</a></p>
+    </footer>
 </body>
 </html>
