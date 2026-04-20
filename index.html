@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download CoreLabLis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .logo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .download-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .download-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        .search-box {
+            margin: 30px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .search-box button {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .links {
+            margin: 30px 0;
+        }
+        .links a {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .links a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔬</div>
+        <h1>CoreLabLis</h1>
+        <p>Professional Pathology Laboratory Information System</p>
+        
+        <div class="download-section">
+            <h2>Download Latest Version</h2>
+            <p>Get the offline software download from our secure server</p>
+            <a href="https://api.corelablis.com/updates/download/latest/browser" class="btn">Download Now</a>
+            <p style="font-size: 0.9em; margin-top: 15px; color: #999;">Latest stable release</p>
+        </div>
 
+        <div class="search-box">
+            <input type="text" placeholder="Search for features, documentation, or more...">
+            <button onclick="window.open('https://corelablis.com')">Search</button>
+        </div>
+
+        <div class="links">
+            <h3 style="color: #333; margin-bottom: 15px;">More Information</h3>
+            <a href="https://corelablis.com" target="_blank">Visit CoreLabLis Website</a>
+            <a href="https://corelablis.com" target="_blank">Documentation</a>
+            <a href="https://corelablis.com" target="_blank">Support</a>
+        </div>
+
+        <div class="footer">
+            <p>CoreLabLis - Advanced Laboratory Management Solutions</p>
+            <p>Download from: <strong>api.corelablis.com</strong></p>
+        </div>
+    </div>
+</body>
+</html>
