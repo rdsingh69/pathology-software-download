@@ -1,276 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoreLabLis - Pathology Management Software</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2464c7;
-      --primary-light: #ecf4fc;
-      --accent: #60c1fa;
-      --feature-bg: #f8fafc;
-      --about-bg: #f1f7fa;
-      --footer-bg: #174389;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: var(--primary-light);
-      color: #1a2733;
-      min-height: 100vh;
-      line-height: 1.64;
-      display: flex; flex-direction: column;
-    }
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 2rem 0 1.2rem 0;
-      box-shadow: 0 2px 12px rgba(36,100,199,0.09);
-      text-align: center;
-    }
-    header h1 {
-      font-weight: 700;
-      font-size: 2.2rem;
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.01em;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.97;
-      font-weight: 400;
-    }
-    .hero {
-      background: white;
-      text-align: center;
-      padding: 2.3rem 1rem 2.3rem 1rem;
-      margin-top: 0.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 38px rgba(36,100,199,0.08);
-      width: 95%;
-      max-width: 600px;
-      margin-left: auto; margin-right: auto;
-    }
-    .hero h2 {
-      color: var(--primary);
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .hero .cta-btn {
-      background: linear-gradient(90deg, var(--accent) 20%, var(--primary) 100%);
-      color: white;
-      display: inline-block;
-      font-size: 1.12rem;
-      font-weight: 600;
-      padding: 0.95rem 2.4rem;
-      border-radius: 2.5rem;
-      margin-top: 0.6rem;
-      text-decoration: none;
-      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-      box-shadow: 0 2px 16px rgba(36,100,199,0.08);
-      letter-spacing: .02em;
-      border: none;
-      cursor: pointer;
-    }
-    .hero .cta-btn:hover, .hero .cta-btn:focus {
-      background: var(--primary);
-      box-shadow: 0 4px 30px #2b74c821;
-      transform: translateY(-2px) scale(1.03);
-    }
-    .features-section {
-      padding: 2.5rem 0 2rem 0;
-      background: var(--feature-bg);
-      margin-top: 1.2rem;
-    }
-    .features-title {
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.3rem;
-      margin-bottom: 1.4rem;
-      color: var(--primary);
-    }
-    .features-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    .feature-card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 3px 25px rgba(36,100,199,0.06);
-      padding: 2rem 1.1rem 1.3rem 1.1rem;
-      width: 320px;
-      min-width: 240px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.16s, box-shadow 0.16s;
-    }
-    .feature-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 6px 36px rgba(36,100,199,0.12);
-    }
-    .feature-card .icon {
-      font-size: 2.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-    .feature-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .feature-card p {
-      color: #334152;
-      font-size: 0.96rem;
-      text-align: center;
-    }
-    .about-section {
-      background: var(--about-bg);
-      border-radius: 1.2rem;
-      max-width: 1040px;
-      margin: 2.3rem auto 1.8rem auto;
-      padding: 2.7rem 1.7rem;
-      box-shadow: 0 2px 24px rgba(36,100,199,0.07);
-    }
-    .about-section h2 {
-      text-align: center;
-      color: var(--primary);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    .about-section p {
-      max-width: 650px;
-      margin: .4rem auto;
-      color: #384865;
-      font-size: 1rem;
-    }
-    .principles-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-    .principle-card {
-      background: linear-gradient(100deg, var(--accent) 20%, var(--primary) 80%);
-      color: white;
-      font-weight: 600;
-      border-radius: 0.8rem;
-      padding: 1.1rem 1.5rem;
-      font-size: 0.99rem;
-      min-width: 180px;
-      text-align: center;
-      letter-spacing: 0.01em;
-      box-shadow: 0 1px 10px #2873c029;
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      background: var(--footer-bg);
-      color: white;
-      text-align: center;
-      padding: 1.6rem 0 1.4rem 0;
-      font-size: 1rem;
-      margin-top: auto;
-      border-radius: 1.2rem 1.2rem 0 0;
-    }
-    footer a {
-      color: #bce0ff;
-      text-decoration: underline;
-      transition: color 0.2s;
-    }
-    footer a:hover, footer a:focus {
-      color: #7cb2f7;
-    }
-    @media (max-width: 1100px) {
-      .features-list {flex-direction: column; align-items: center;}
-    }
-    @media (max-width: 600px) {
-      .features-section {padding: 1.35rem 0;}
-      .feature-card {width: 97vw; max-width: 420px; min-width: 0;}
-      .about-section {padding: 1.5rem 0.6rem;}
-    }
-    @media (max-width: 430px) {
-      header {padding: 1rem 0;}
-      .hero {padding: 1.1rem 0.3rem;}
-      .about-section {padding: 1.1rem 0.2rem;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #0d47a1;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, #00bcd4, #2196f3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .feature-cards {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .card {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .about {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+        .badge {
+            background-color: #2196f3;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        @media (max-width: 768px) {
+            .feature-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 80%;
+            }
+        }
+    </style>
+    <title>Pathology Software Download</title>
 </head>
 <body>
-  <header>
-    <h1>CoreLabLis</h1>
-    <p>Your Comprehensive Pathology Management Software</p>
-  </header>
-  <section class="hero">
-    <h2>Download the Latest Release</h2>
-    <a class="cta-btn" href="https://api.corelablis.com/updates/download/latest/browser">Download Now</a>
-  </section>
-  <section class="features-section">
-    <div class="features-title">Key Features</div>
-    <div class="features-list">
-      <div class="feature-card">
-        <span class="icon">🖥️</span>
-        <h3>Intuitive User Interface</h3>
-        <p>Designed for seamless workflow and easy navigation, even for new users.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">🔐</span>
-        <h3>Robust Data Management</h3>
-        <p>Securely manage all pathology data with full traceability and audit trails.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">📑</span>
-        <h3>Advanced Reporting</h3>
-        <p>Generate detailed, exportable reports to support quick, data-informed decisions.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">☁️</span>
-        <h3>Cloud & Offline Access</h3>
-        <p>Work from anywhere with secure cloud and robust offline-first capabilities.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">🤝</span>
-        <h3>Real-time Collaboration</h3>
-        <p>Collaborate instantly with your team across locations for greater productivity.</p>
-      </div>
-      <div class="feature-card">
-        <span class="icon">⚙️</span>
-        <h3>Customizable Workflows</h3>
-        <p>Adapt the software to your unique process and lab needs with flexible configuration.</p>
-      </div>
+    <div class="navbar">
+        <div>Logo</div>
+        <div>Links</div>
     </div>
-  </section>
-  <section class="about-section">
-    <h2>About CoreLabLis</h2>
-    <p>CoreLabLis revolutionizes pathology lab operation and reporting. Built for accuracy, efficiency, and a modern experience, it empowers your lab to deliver the best patient outcomes.</p>
-    <p><b>Pathology Management:</b> Streamline processes, enhance patient care, and improve result accuracy.</p>
-    <p><b>Offline-first Approach:</b> Always access critical data, even without internet.</p>
-    <div style="margin-top:2.2rem;text-align:center;">
-      <div style="font-size:1.08rem;font-weight:600;color:var(--primary);margin-bottom:0.8rem;">Our Guiding Principles</div>
-      <div class="principles-list">
-        <div class="principle-card">User-Centric Design</div>
-        <div class="principle-card">Data Integrity</div>
-        <div class="principle-card">Continuous Improvement</div>
-        <div class="principle-card">Collaboration & Sharing</div>
-        <div class="principle-card">Security First</div>
-        <div class="principle-card">Transparency & Trust</div>
-      </div>
+    <div class="hero">
+        <h1 style="color: white;">Welcome to the Pathology Software</h1>
     </div>
-  </section>
-  <footer>
-    &copy; 2026 CoreLabLis —
-    <a href="https://corelablis.com" target="_blank" rel="noopener">Visit our website</a>
-  </footer>
+    <div class="feature-cards">
+        <div class="card">
+            <h2>Feature 1</h2>
+            <p>Description of feature 1.</p>
+        </div>
+        <div class="card">
+            <h2>Feature 2</h2>
+            <p>Description of feature 2.</p>
+        </div>
+        <div class="card">
+            <h2>Feature 3</h2>
+            <p>Description of feature 3.</p>
+        </div>
+    </div>
+    <div class="about">
+        <h2>About Us</h2>
+        <p>We provide top-notch pathology software solutions.</p>
+        <span class="badge">Award 1</span>
+        <span class="badge">Award 2</span>
+    </div>
 </body>
 </html>
